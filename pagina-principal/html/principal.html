@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP - Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header class="header" style="position: relative;">
+    <img src="img/logo copy.png" alt="SIP Logo" class="logo-header">
+    <nav class="nav-header">
+      <a href="../../publicados/html/publicados.html"><i class="fa-regular fa-file-lines"></i> Publicados</a>
+      <a href="#" id="notificaciones-btn"><i class="fa-regular fa-bell"></i> Notificaciones</a>
+      <span class="user-circle-big" id="perfil-btn">D</span>
+    </nav>
+    <!-- Menú de usuario tipo viñeta -->
+    <div id="perfil-menu" class="perfil-menu">
+      <div class="perfil-menu-arrow"></div>
+      <ul>
+        <li><i class="fa-regular fa-user"></i> Perfil</li>
+        <li><i class="fa-solid fa-gear"></i> Configuración</li>
+        <li><i class="fa-regular fa-circle-question"></i> Ayuda</li>
+        <li><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+      </ul>
+    </div>
+    <!-- Notificaciones Popover -->
+    <div id="notificaciones-popover" class="notificaciones-popover">
+      <div class="notificaciones-arrow"></div>
+      <h3>Notificaciones</h3>
+      <div class="notificacion-item">
+        <span class="notif-avatar">A</span>
+        <div>
+          <strong>Respondió tu publicación</strong>
+          <div class="notif-text">Te dare varias ideas para tu proyecto...</div>
+        </div>
+      </div>
+      <div class="notificacion-item">
+        <span class="notif-avatar">J</span>
+        <div>
+          <strong>Respondió tu publicación</strong>
+          <div class="notif-text">Te dare varias ideas para tu proyecto...</div>
+        </div>
+      </div>
+      <div class="notificacion-item">
+        <span class="notif-avatar">D</span>
+        <div>
+          <strong>Respondió tu respuesta</strong>
+          <div class="notif-text">Muchas gracias me sirvió mucho, sig...</div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main-content">
+    <h2>
+      Aquí encontrarás novedades, mensajes y<br>
+      conexiones con otros aprendices y<br>
+      egresados.
+    </h2>
+    <div class="search-bar-container" style="position:relative;">
+      <input type="text" class="search-bar" placeholder="search text">
+      <span class="search-icon" style="position:absolute;top:10px;right:18px;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+    <div class="options-row">
+      <div class="option-block" id="aprendiz">
+        <i class="fa-regular fa-user"></i>
+        <span>APRENDIZ</span>
+      </div>
+      <div class="option-block" id="egresado">
+        <i class="fa-solid fa-user-graduate"></i>
+        <span>EGRESADO</span>
+      </div>
+      <div class="option-block" id="proyectos">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>PROYECTOS</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <hr class="footer-line">
+      <div class="footer-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <hr class="footer-line">
+    </div>
+    <div class="footer-text">
+      Copyright © 2025 SENA INTERACTIVE PORTAL
+    </div>
+    <div class="footer-links">
+      <span>Información legal</span>
+      <span>Política de privacidad</span>
+    </div>
+  </footer>
+  <script>
+  // Interacción para las opciones
+  document.getElementById('aprendiz').onclick = () => alert('Ir a Aprendiz');
+  document.getElementById('egresado').onclick = () => alert('Ir a Egresado');
+  document.getElementById('proyectos').onclick = () => {
+    window.location.href = '../../proyectos/html/proyectos.html';
+  };
+
+  // Menú de usuario interactivo
+  const perfilBtn = document.getElementById('perfil-btn');
+  const perfilMenu = document.getElementById('perfil-menu');
+  perfilBtn.onclick = function(e) {
+    e.stopPropagation();
+    perfilMenu.style.display = perfilMenu.style.display === 'block' ? 'none' : 'block';
+    document.getElementById('notificaciones-popover').style.display = 'none';
+  };
+  document.addEventListener('click', function() {
+    perfilMenu.style.display = 'none';
+    document.getElementById('notificaciones-popover').style.display = 'none';
+  });
+  perfilMenu.onclick = function(e) {
+    e.stopPropagation();
+  };
+
+  // Notificaciones Popover
+  const notiBtn = document.getElementById('notificaciones-btn');
+  const notiPopover = document.getElementById('notificaciones-popover');
+  notiBtn.onclick = function(e) {
+    e.stopPropagation();
+    notiPopover.style.display = notiPopover.style.display === 'block' ? 'none' : 'block';
+    perfilMenu.style.display = 'none';
+  };
+  notiPopover.onclick = function(e) {
+    e.stopPropagation();
+  };
+</script>
+</body>
+</html>

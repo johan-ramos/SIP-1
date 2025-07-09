@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181a1b;
+    color: #fff;
+}
+
+.config-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #232526;
+    padding: 24px 0 0 0;
+    border-right: 1px solid #222;
+}
+
+.sidebar h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0 0 24px 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 12px 24px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar li.active, .sidebar li:hover {
+    background: #2a2c2e;
+    border-left: 4px solid #00b4ff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 32px 48px;
+    background: #181a1b;
+}
+
+.search-bar {
+    margin-bottom: 32px;
+}
+
+.search-bar input {
+    width: 350px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #232526;
+    color: #fff;
+    font-size: 1em;
+}
+
+.profile-section {
+    max-width: 600px;
+}
+
+.profile-card {
+    background: #232526;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 48px;
+    height: 48px;
+    background: #444;
+    border-radius: 50%;
+}
+
+.deactivate-btn {
+    margin-left: auto;
+    background: none;
+    border: 1px solid #00b4ff;
+    color: #00b4ff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.deactivate-btn:hover {
+    background: #00b4ff;
+    color: #fff;
+}
+
+.profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-options li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile-options li:last-child {
+    border-bottom: none;
+}
+
+.profile-options li:hover {
+    background: #222;
+}

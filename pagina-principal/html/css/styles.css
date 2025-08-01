@@ -145,7 +145,7 @@ body, html {
   transition: color 0.18s;
 }
 .option-block:hover {
-  background: #b2dfdb;
+  background: #c0ffff;
   box-shadow: 0 4px 16px #0002;
   transform: translateY(-4px) scale(1.04);
 }
@@ -368,4 +368,37 @@ body, html {
     min-width: 0;
     width: 100%;
   }
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #b2dfdb;
+  border-radius: 20px;
+  padding: 4px 14px 4px 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.user-info:hover {
+  background: #10b981;
+}
+.user-avatar {
+  background: #10b981;
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.user-name {
+  color: #184C3A;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.user-info:hover .user-name {
+  color: #fff;
 }
